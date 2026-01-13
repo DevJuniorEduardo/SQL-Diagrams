@@ -1,0 +1,38 @@
+📊 Descripción del Diagrama de Base de Datos – Sistema de Farmacia
+
+El diagrama representa la estructura de una base de datos diseñada para gestionar de forma integral las operaciones de una farmacia, abarcando compras, ventas, productos, proveedores, clientes, empleados y categorías.
+
+🧴 Productos
+
+La tabla productos almacena la información principal de cada medicamento o artículo disponible en la farmacia. Incluye datos como nombre, descripción, precio de compra, precio de venta, stock disponible, fecha de vencimiento y su relación con una categoría y un proveedor.
+
+🗂️ Categorías
+
+La tabla categorias permite clasificar los productos (por ejemplo: analgésicos, antibióticos, cuidado personal), facilitando la organización y búsqueda dentro del inventario.
+
+🚚 Proveedores
+
+La tabla proveedores contiene la información de las empresas o personas que suministran los productos a la farmacia, como nombre, contacto, teléfono, email y dirección. Cada proveedor puede estar asociado a múltiples productos y compras.
+
+🛒 Compras
+
+La tabla compras registra las adquisiciones realizadas a los proveedores. Incluye la fecha de la compra, el precio unitario y el proveedor asociado.
+El detalle de cada compra se gestiona mediante la tabla detalle_compras, donde se especifican los productos adquiridos, la cantidad y el precio unitario de cada uno.
+
+💊 Ventas
+
+La tabla ventas almacena las transacciones realizadas a los clientes, registrando la fecha, el total de la venta, el cliente atendido y el empleado que realizó la operación.
+Los productos vendidos se detallan en la tabla detalle_ventas, indicando producto, cantidad y precio unitario por cada venta.
+
+👥 Clientes
+
+La tabla clientes guarda la información básica de los clientes de la farmacia, como nombre, apellido, DNI, teléfono y dirección, permitiendo el seguimiento de compras.
+
+🧑‍⚕️ Empleados
+
+La tabla empleados registra a los trabajadores de la farmacia, incluyendo datos personales, cargo, DNI y teléfono. Cada empleado puede estar vinculado a múltiples ventas.
+
+Este modelo busca facilitar el control de stock, registrar compras, mantener datos del personal y generar registros de ventas. Aunque es una estructura básica, es fácilmente escalable para incluir funcionalidades como proveedores, categorías de productos, o reportes avanzados.
+
+Y para las claves foráneas y Relaciones te la dejo como tarea para que leas y entiendas como se ven en un diagrama.
+

@@ -1,0 +1,31 @@
+Descripción del Diagrama de Base de Datos – Noticias
+
+Esta base de datos parece estar diseñada para gestionar un "portal de noticias". Su estructura permite no solo publicar contenido, sino también administrar usuarios, organizar la información por categorías y fomentar la interacción mediante comentarios y "likes".
+
+Aquí tienes una descripción detallada de sus funciones principales y cómo interactúan sus componentes:
+
+1. Gestión de Usuarios y Permisos
+
+El núcleo de la seguridad y autoría reside en las tablas `usuarios` y `roles`.
+
+Identificación: Almacena datos críticos como nombre, email, DNI y contraseña.
+Control de Accesos: La relación con la tabla `roles` permite definir quién es un administrador, un redactor o un simple lector, determinando qué acciones pueden realizar en la plataforma.2. Publicación de Contenido (Noticias)
+
+La tabla `noticias` es el motor central del sistema.
+
+Autoría: Cada noticia está vinculada a un `usuario_id`, permitiendo saber exactamente qué redactor creó el contenido.
+Organización: Se conecta con `categorias` para clasificar las noticias (ej. Deportes, Política, Tecnología).
+Etiquetado: Utiliza una tabla intermedia (`noticias_etiquetas`) para permitir una relación "muchos a muchos" con `etiquetas`. Esto facilita que una noticia tenga múltiples "tags" y que una etiqueta agrupe muchas noticias, optimizando las búsquedas.
+
+3. Interacción y Feedback
+
+Para fomentar la comunidad, el modelo incluye funciones sociales:
+
+Comentarios: Permite que los usuarios registrados dejen mensajes en noticias específicas, guardando la fecha exacta de la interacción.
+Likes: Un sistema sencillo de "me gusta" para medir la popularidad del contenido, vinculando usuarios con noticias.
+
+4. Auditoría y Control de Cambios
+
+Una característica interesante es la tabla `ediciones`.
+
+Historial: Registra los cambios realizados en las noticias. Al guardar el `usuario_id`, el `noticia_id` y el `rol_id` en el momento de la edición, el sistema puede mantener un rastro de quién modificó qué y cuándo, lo cual es vital para entornos editoriales profesionales.
